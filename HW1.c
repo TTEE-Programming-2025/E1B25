@@ -5,8 +5,7 @@ int main(void){
 	char ch;
 	while(i<=1){
 	
-	printf("    **   **   \n");
-    printf(" *************  \n");
+
     printf("***************\n");
     printf(" *************\n");
     printf("  ***********  \n");
@@ -56,4 +55,4 @@ int main(void){
 		printf("¿é¤J¿ù»~");
 	}
 	return 0;
-} 
+}
