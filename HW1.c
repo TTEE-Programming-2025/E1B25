@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
-	int a;
+	int a,i;
 	char ch;
+	for(i=0;i<=1;i++){
+	
 	printf("    **   **   \n");
     printf(" *************  \n");
     printf("***************\n");
@@ -13,16 +15,8 @@ int main(void){
     printf("     *****     \n");
     printf("      ***     \n");
     printf("       *   \n");
-    printf("    **   **   \n");
-    printf(" *************  \n");
-    printf("***************\n");
-    printf(" *************\n");
-    printf("  ***********  \n");
-    printf("   *********   \n");
-    printf("    *******    \n");
-    printf("     *****     \n");
-    printf("      ***     \n");
-    printf("       *   \n");
+	}
+
 	system("pause");
 	system("CLS");
 	printf("輸入 4 個數字的密碼:");
@@ -61,4 +55,4 @@ int main(void){
 		printf("輸入錯誤");
 	}
 	return 0;
-} 
+}
