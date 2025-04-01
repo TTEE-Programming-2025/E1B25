@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
-	int a,i;
+	int a,i=0;
 	char ch;
-	for(i=0;i<=1;i++){
+	while(i<=1){
 	
 	printf("    **   **   \n");
     printf(" *************  \n");
@@ -15,6 +15,7 @@ int main(void){
     printf("     *****     \n");
     printf("      ***     \n");
     printf("       *   \n");
+    i++;
 	}
 
 	system("pause");
@@ -55,4 +56,4 @@ int main(void){
 		printf("¿é¤J¿ù»~");
 	}
 	return 0;
-}
+} 
