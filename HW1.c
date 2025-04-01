@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
-	int a,i=0;
+	int a,i;
 	char ch;
-	while(i<=1){
-	
-
+	srand(time(NULL)); 
+    int times = rand() % 10 + 1; 
+    for ( i = 0; i < times; i++) {
     printf("***************\n");
     printf(" *************\n");
     printf("  ***********  \n");
@@ -14,7 +14,6 @@ int main(void){
     printf("     *****     \n");
     printf("      ***     \n");
     printf("       *   \n");
-    i++;
 	}
 
 	system("pause");
@@ -55,4 +54,4 @@ int main(void){
 		printf("¿é¤J¿ù»~");
 	}
 	return 0;
-}
+} 
