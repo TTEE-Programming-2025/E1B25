@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(void){
-	int a,i=0;
+	int a,i=0,n,l=0;
 	char ch,ch1,j,k;
 	while(i<=1){
 	
@@ -45,7 +45,7 @@ int main(void){
 				printf("輸入一個a到n的字元:");
 				fflush(stdin);
 				scanf("%c",&ch1);
-				while(ch1<='a'||ch1>='n'){
+				while(ch1<'a'||ch1>'n'){
 					printf("輸入一個a到n的字元:");
 					fflush(stdin);
 					scanf("%c",&ch1);
@@ -64,6 +64,30 @@ int main(void){
 					system("CLS");
 				}
 				
+				
+			}
+			else if(ch=='B'||ch=='b'){
+				printf("輸入1~9的整數:");
+				fflush(stdin);
+				scanf("%d",&n);
+				while(n<1||n>9){
+					printf("輸入1~9的整數:");
+					fflush(stdin);
+					scanf("%d",&n);
+				}
+				if(n>=1&&n<=9){
+					
+					for(i=1;i<=n;i++){
+						
+						for(l=1;l<=i;l++){
+							printf("%d*%d=%d ",i,l,i*l);
+						}
+						printf("\n");
+					
+					}
+					system("pause");
+					system("CLS");
+				}
 				
 			}
 			
