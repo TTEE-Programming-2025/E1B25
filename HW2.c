@@ -2,6 +2,7 @@
 #include<stdlib.h>
 int main(void){
 	int a,i=0;
+	char ch,ch1,j,k;
 	while(i<=1){
 	
 	printf("    **   **   \n");
@@ -38,6 +39,33 @@ int main(void){
 			printf("|  b. 顯示乘法表  |\n");
 			printf("|  c. 結束        |\n");
 			printf("~~~~~~~~~~~~~~~~~~~\n");
+			fflush(stdin);
+			scanf("%c",&ch);
+			if(ch=='A'||ch=='a'){
+				printf("輸入一個a到n的字元:");
+				fflush(stdin);
+				scanf("%c",&ch1);
+				while(ch1<='a'||ch1>='n'){
+					printf("輸入一個a到n的字元:");
+					fflush(stdin);
+					scanf("%c",&ch1);
+				}
+				if(ch1>='a'&&ch1<='n'){
+					
+					for(k=ch1;k>='a';k--){
+						
+						for(j=ch1;j>=k;j--){
+							printf("%c",j);
+						}
+						printf("\n");
+					
+					}
+					system("pause");
+					system("CLS");
+				}
+				
+				
+			}
 			
 	}
 	system("pause");
