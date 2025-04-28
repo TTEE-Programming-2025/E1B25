@@ -2,7 +2,7 @@
 #include<stdlib.h>
 int main(void){
 	int a,i=0,n,l=0;
-	char ch,ch1,j,k;
+	char ch,ch1,j,k,ch2;
 	while(i<=1){
 	
 	printf("    **   **   \n");
@@ -34,6 +34,7 @@ int main(void){
 		}
 	}
 	if(a==2025){
+		Start:
 			printf("~~~~~~~~~~~~~~~~~~~\n");
 			printf("|  a. 畫出三角形  |\n");
 			printf("|  b. 顯示乘法表  |\n");
@@ -88,6 +89,21 @@ int main(void){
 					system("pause");
 					system("CLS");
 				}
+				
+			}
+			else if(ch=='C'||ch=='c'){
+				printf("'Continue? (y/n)'");
+				fflush(stdin);
+				scanf("%c",&ch2);
+				while(ch2!='Y'&&ch2!='y'&&ch2!='N'&&ch2!='n'){
+					printf("輸入錯誤，重新輸入");
+					fflush(stdin);
+					scanf("%c",&ch2);
+				}
+				if(ch2=='Y'||ch2=='y'){
+					goto Start;
+				}
+				
 				
 			}
 			
