@@ -46,8 +46,14 @@ int main(void){
 	printf("------[Booking System]------\n");
 	printf("|  a. Available            |\n");
 	printf("|  b. Arrange for you      |\n");
-	printf("|  c. Exit                 |\n");
+	printf("|  c. Choose by yourself   |\n");
+	printf("|  d. Exit                 |\n");
 	printf("----------------------------\n");
+	fflush(stdin); 
+	scanf("%c",&ch);
+	if(ch=='a'||ch=='A'){
+		
+	}
 			
 			
 	
