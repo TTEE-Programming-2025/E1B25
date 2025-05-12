@@ -230,12 +230,26 @@ int main(void){
 		goto Start;
 		
 	}
+	if(ch=='d'||ch=='D'){
+		char ch3;
+		printf("'Continue? (y/n)'");
+				fflush(stdin);
+				scanf("%c",&ch3);
+				while(ch3!='Y'&&ch3!='y'&&ch3!='N'&&ch3!='n'){
+					printf("輸入錯誤，重新輸入");
+					fflush(stdin);
+					scanf("%c",&ch3);
+				}
+				if(ch3=='Y'||ch3=='y'){
+					goto Start;
+				}
+	}
 
 	
 			
 			
 	
-	system("pause");
+	
 	return 0;
 }
 
