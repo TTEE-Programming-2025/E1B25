@@ -97,7 +97,7 @@ int main(void){
     fflush(stdin);
     scanf("%d", &n);
     int placed = 0;
-    if (n >= 1 && n <= 3) {
+    if (n>=1&&n<=3) {
         int row = rand() %9;
         int start_col;
         int can_place;
@@ -188,7 +188,48 @@ int main(void){
                         m[i][j] = '*';
 		goto Start;
 		}
-}
+	}
+	if(ch=='c'||ch=='C'){
+		char st[40];
+		int num=0;
+		fflush(stdin);
+		printf("輸入人數? (1-4): ");
+		scanf("%d", &num);
+    for (i = 0; i<num; i++) {
+       	printf("輸入座位(列-行)");
+        fflush(stdin);
+		fgets(st, sizeof(st), stdin);
+        if (sscanf(st, "%d-%d", &row, &col) != 2 || row < 1 || row > 9 || col < 1 || col > 9) {
+            printf("輸入錯誤，輸入座位(列-行)\n");
+            i--;
+            continue;
+        }
+
+        if (m[row - 1][col - 1] != '-') {
+            printf("座位有人，重新輸入\n");
+            i--;
+            continue;
+        }
+
+        m[row - 1][col - 1] = '@';
+    }
+    system("CLS");
+	printf("\\123456789\n");
+	for(i=8;i>=0;i--){
+		printf("%d",i+1);
+		for(j=0;j<9;j++){
+			printf("%c",m[i][j]);
+		}
+		printf("\n");
+	}
+	system("pause");
+	for (i=0;i<9;i++)
+                for (j=0;j<9;j++)
+                    if (m[i][j] == '@')
+                        m[i][j] = '*';
+		goto Start;
+		
+	}
 
 	
 			
