@@ -11,6 +11,7 @@ struct std {
 	}st[10];
 	int n=0;
 void a(void){
+	system("CLS");
 	int i;
 	printf("請輸入整數(5~10):");
 	fflush(stdin);
@@ -66,6 +67,7 @@ void a(void){
 }
 
 void b(void){
+	system("CLS");
 	int i;
 	if (n == 0) {
         printf("目前尚無學生資料！\n");
@@ -85,6 +87,39 @@ void b(void){
 	}
 	getchar();
     getchar();
+	return ;
+}
+
+void c(void){
+	system("CLS");
+	int i;
+	char t[10];
+	fflush(stdin);
+	printf("查詢的學生姓名:");
+	fgets(t,10,stdin);
+	t[strcspn(t, "\n")] = '\0';
+	for(i=0;i<n;i++){
+	
+		if(strcmp(t,st[i].name)==0){
+			printf("學生姓名:%s ",st[i].name);
+			printf("學生學號:%d ",st[i].number);
+			printf("數學成績:%d ",st[i].m);
+			printf("物理成績:%d ",st[i].p);
+			printf("英文成績:%d ",st[i].e);
+			st[i].avg = (st[i].m + st[i].p + st[i].e) / 3.3f;
+			printf("平均為:%.2f\n",st[i].avg);
+        	getchar(); 
+        	return;
+		}
+		else{
+			printf("資料不存在\n");
+    		getchar();
+			return ;
+		}
+	}
+	getchar();
+    getchar();
+	
 	return ;
 }
 int main(void){
@@ -146,10 +181,14 @@ int main(void){
     	goto Start;
 	}
 	if(ch=='c'||ch=='C'){
-		
+		c();
+    	goto Start;
 		
 	}
 	if(ch=='d'||ch=='D'){
+		
+	} 
+	if(ch=='e'||ch=='E'){
 		
 	} 
 	
