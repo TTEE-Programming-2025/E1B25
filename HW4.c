@@ -106,8 +106,8 @@ void c(void){
 			printf("數學成績:%d ",st[i].m);
 			printf("物理成績:%d ",st[i].p);
 			printf("英文成績:%d ",st[i].e);
-			st[i].avg = (st[i].m + st[i].p + st[i].e) / 3.3f;
 			printf("平均為:%.2f\n",st[i].avg);
+        	getchar(); 
         	getchar(); 
         	return;
 		}
@@ -117,9 +117,58 @@ void c(void){
 			return ;
 		}
 	}
-	getchar();
-    getchar();
+
 	
+	return ;
+}
+void d(void){
+	system("CLS");
+    int i,j;
+    struct std temp;
+    if (n==0) {
+        printf("目前尚無學生資料！\n");
+        printf("請按任意鍵返回主選單...\n");
+        getchar();
+        getchar();
+        return;
+    }
+    for (i=0;i<n;i++) {
+        for (j=0;j<n-i;j++) {
+            if (st[j].avg<st[j+1].avg) {
+                temp=st[j];
+                st[j]=st[j+1];
+                st[j+1]=temp;
+            }
+        }
+    }
+for(i=0;i<n;i++){
+		printf("學生姓名:%s ",st[i].name);
+		printf("學生學號:%d ",st[i].number);
+		printf("平均為:%.2f\n",st[i].avg);
+	}
+    getchar();
+    getchar();
+	return ;
+}
+void e(void){
+	system("CLS");
+	char ch3;
+	printf("'Continue? (y/n)'");
+	fflush(stdin);
+	scanf("%c",&ch3);
+	while(ch3!='Y'&&ch3!='y'&&ch3!='N'&&ch3!='n'){
+		printf("輸入錯誤，重新輸入");
+		fflush(stdin);
+		scanf("%c",&ch3);
+	}
+	if(ch3=='Y'||ch3=='y'){
+		exit(0);
+	}
+	
+	if(ch3=='N'||ch3=='n'){
+		getchar();
+		getchar();
+	}
 	return ;
 }
 int main(void){
@@ -186,10 +235,12 @@ int main(void){
 		
 	}
 	if(ch=='d'||ch=='D'){
-		
+		d();
+    	goto Start;
 	} 
 	if(ch=='e'||ch=='E'){
-		
+		e();
+    	goto Start;
 	} 
 	
 	
