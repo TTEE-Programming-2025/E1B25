@@ -1,8 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+struct std {
+		char name[10];
+		int number;
+		int m;
+		int p;
+		int e;
+		float avg;
+	}st[10];
+	int n=0;
 void a(void){
-	int i,n;
+	int i;
 	printf("請輸入整數(5~10):");
 	fflush(stdin);
 	scanf("%d",&n);
@@ -11,18 +20,13 @@ void a(void){
 		fflush(stdin);
 		scanf("%d",&n);
 	}
-	struct std {
-		char name[10];
-		int number;
-		int m;
-		int p;
-		int e;
-	}st[n];
+	
 	for(i=0;i<n;i++){
 		
 		fflush(stdin);
 		printf("學生姓名:");
 		fgets(st[i].name,10,stdin);
+		st[i].name[strcspn(st[i].name, "\n")] = '\0';
 		printf("學生學號:");
 		fflush(stdin);
 		scanf("%d",&st[i].number);
@@ -59,6 +63,29 @@ void a(void){
     getchar(); 
     getchar(); 
 	return;
+}
+
+void b(void){
+	int i;
+	if (n == 0) {
+        printf("目前尚無學生資料！\n");
+        printf("請按任意鍵返回主選單...\n");
+        getchar();
+        getchar(); 
+        return;
+    }
+	for(i=0;i<n;i++){
+		printf("學生姓名:%s ",st[i].name);
+		printf("學生學號:%d ",st[i].number);
+		printf("數學成績:%d ",st[i].m);
+		printf("物理成績:%d ",st[i].p);
+		printf("英文成績:%d ",st[i].e);
+		st[i].avg = (st[i].m + st[i].p + st[i].e) / 3.3f;
+		printf("平均為:%.2f\n",st[i].avg);
+	}
+	getchar();
+    getchar();
+	return ;
 }
 int main(void){
 	int i=0,w=0,j,p;
@@ -115,7 +142,8 @@ int main(void){
 		goto Start;
 	}
 	if(ch=='b'||ch=='B'){
-    
+    	b();
+    	goto Start;
 	}
 	if(ch=='c'||ch=='C'){
 		
